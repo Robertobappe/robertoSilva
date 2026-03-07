@@ -105,7 +105,7 @@ body {
     font-size: 0.8rem;
     font-weight: bold;
     letter-spacing: 1px;
-    margin-bottom: 18px; /* Aumente para afastar do nome, diminua para aproximar */
+    margin-bottom: 15px; /* Aumente para afastar do nome, diminua para aproximar */
     display: block;      /* Garante que a margem funcione corretamente */
 }
 
@@ -119,8 +119,8 @@ body {
 .main-text .stats {
     font-weight: bold;
     color: #ffffff;
-    margin-top: 10px;    /* Controla o espaço entre o Nome e a USP */
-    line-height: 0.9;    /* Controla a altura da própria linha de texto */
+    margin-top: 12px;    /* Controla o espaço entre o Nome e a USP */
+    line-height: 1;    /* Controla a altura da própria linha de texto */
 }
 
 /* --- CONTEÚDO DAS SEÇÕES --- */
@@ -206,4 +206,15 @@ footer {
     .main-text h1 {
         font-size: 3rem;
     }
+}
+
+/* Seleciona a lista especificamente dentro da seção About */
+#about ul {
+    margin-left: 40px; /* Isso cria o efeito de "Tab" */
+    list-style-type: disc; /* Garante que os pontos apareçam */
+}
+
+#about li {
+    padding-left: 10px; /* Espaço entre a bolinha e o texto */
+    margin-bottom: 12px; /* Espaço entre um item e outro */
 }
