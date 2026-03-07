@@ -1,0 +1,106 @@
+/* Configurações Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f2f5;
+    color: #1c1e21;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Cabeçalho */
+header {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* Seções */
+section {
+    background: white;
+    margin: 30px 0;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #3498db;
+    display: inline-block;
+}
+
+/* Cartão de Projeto */
+.project-card {
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Botões e Links */
+.links {
+    margin-top: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 20px;
+    background: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 0.9rem;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid #3498db;
+    color: #3498db;
+}
+
+.contact-links a {
+    margin-right: 20px;
+    color: #2c3e50;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.contact-links a:hover {
+    color: #3498db;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 40px 0;
+    color: #777;
+    font-size: 0.85rem;
+}
