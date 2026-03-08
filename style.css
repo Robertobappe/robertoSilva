@@ -21,7 +21,7 @@ body {
 /* --- SPOTIFY HERO --- */
 .spotify-hero {
     position: relative;
-    height: 50vh;
+    height: -0vh;
     min-height: 400px;
     overflow: hidden;
     display: flex;
@@ -212,4 +212,8 @@ footer { text-align: center; padding: 60px; color: #b3b3b3; }
 .contact-links a:hover {
     color: #1DB954; /* Verde Spotify ao passar o mouse */
     transform: scale(1.1); /* Leve aumento no hover */
+}
+
+#about h3 {
+    font-weight: normal;
 }
