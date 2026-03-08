@@ -198,8 +198,8 @@ footer { text-align: center; padding: 60px; color: #b3b3b3; }
 
 .contact-links {
     display: flex;
-    gap: 30px; /* Espaçamento uniforme entre os ícones */
-    font-size: 2.5rem; /* Aumenta o tamanho dos ícones */
+    gap: 1px; /* Espaçamento uniforme entre os ícones */
+    font-size: 1.8rem; /* Aumenta o tamanho dos ícones */
     margin-top: 20px;
 }
 
