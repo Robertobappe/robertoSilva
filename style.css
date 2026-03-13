@@ -21,7 +21,6 @@ body {
 /* --- SPOTIFY HERO --- */
 .spotify-hero {
     position: relative;
-    height: -0vh;
     min-height: 400px;
     overflow: hidden;
     display: flex;
@@ -30,10 +29,7 @@ body {
 
 .hero-background {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0; width: 100%; height: 100%;
     background-size: cover;
     background-position: center;
     filter: brightness(0.5);
@@ -61,19 +57,19 @@ body {
 .spotify-card {
     background: rgba(0, 0, 0, 0.7);
     border-radius: 8px;
-    display: flex !important;
+    display: flex;
     align-items: stretch;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    width: max-content !important;
+    width: max-content;
     overflow: hidden;
     flex-shrink: 0;
 }
 
 .spotify-card img {
-    width: 100px !important; 
-    height: 100px !important;
-    object-fit: cover !important; 
+    width: 100px; 
+    height: 100px;
+    object-fit: cover;
     display: block;
 }
 
@@ -88,26 +84,11 @@ body {
 .card-sublabel { font-size: 0.75rem; color: #b3b3b3; }
 
 /* --- TEXTO DO BANNER --- */
-/* --- TEXTO DO BANNER --- */
-.main-text .tag { 
-    font-size: 0.8rem; 
-    font-weight: bold; 
-    margin-bottom: 15px; 
-}
+.main-text .tag { font-size: 0.8rem; font-weight: bold; margin-bottom: 15px; }
+.main-text h1 { font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 900; line-height: 0.97; }
+.main-text .stats { font-weight: bold; margin-top: 13px; font-size: 0.9rem; }
 
-.main-text h1 { 
-    font-size: clamp(2.5rem, 8vw, 5rem); 
-    font-weight: 900; 
-    line-height: 0.97; 
-}
-
-.main-text .stats { 
-    font-weight: bold; 
-    margin-top: 13px;      
-    font-size: 0.9rem;   
-}
-
-/* --- NOVA NAVEGAÇÃO (TABS) --- */
+/* --- NAVEGAÇÃO --- */
 .spotify-nav {
     background-color: #121212;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -136,18 +117,14 @@ body {
 
 .tab-item:hover { color: #ffffff; }
 .tab-item.active { color: #ffffff; }
-
 .tab-item.active::after {
     content: "";
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
+    bottom: 0; left: 0; width: 100%; height: 3px;
     background-color: #1DB954;
 }
 
-/* --- LÓGICA DE EXIBIÇÃO --- */
+/* --- CONTEÚDO --- */
 .tab-content {
     display: none;
     background: #181818;
@@ -156,7 +133,6 @@ body {
     border-radius: 10px;
     animation: fadeIn 0.4s ease;
 }
-
 .tab-content.active { display: block; }
 
 @keyframes fadeIn {
@@ -164,10 +140,9 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- ESTILIZAÇÃO INTERNA --- */
+/* --- PROJETOS E BOTÕES --- */
 h2 { margin-bottom: 25px; color: #1DB954; font-size: 1.5rem; }
-.project-card { background: #282828; padding: 25px; border-radius: 8px; transition: 0.3s; }
-
+.project-card { background: #282828; padding: 25px; border-radius: 8px; }
 
 .btn {
     display: inline-block;
@@ -178,90 +153,72 @@ h2 { margin-bottom: 25px; color: #1DB954; font-size: 1.5rem; }
     border-radius: 50px;
     font-weight: bold;
     margin-top: 15px;
+    transition: transform 0.1s ease;
 }
-
+.btn:hover { transform: scale(1.04); }
 .btn-outline { background: transparent; border: 1px solid #fff; color: #fff; margin-left: 10px; }
 
-.contact-links a { color: #fff; margin-right: 25px; text-decoration: none; font-weight: 600; }
-.contact-links a:hover { color: #1DB954; }
+/* --- ESTILO "SHOW ALL" (SEE MORE) --- */
+#more-text { display: none; } /* Escondido por padrão */
 
-#about ul { margin-left: 40px; list-style-type: disc; }
-#about li { padding-left: 10px; margin-bottom: 12px; }
+#readMoreBtn {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+#readMoreBtn:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* --- CONTATO --- */
+.contact-links { display: flex; gap: 25px; font-size: 1.8rem; margin-top: 20px; }
+.contact-links a { color: #fff; transition: transform 0.2s, color 0.3s; }
+.contact-links a:hover { color: #1DB954; transform: scale(1.1); }
 
 footer { text-align: center; padding: 60px; color: #b3b3b3; }
 
-/* --- RESPONSIVIDADE --- */
-@media (max-width: 768px) {
-    .hero-content { flex-direction: column; align-items: flex-start; }
-    .main-text h1 { font-size: 3rem; }
+/* Tooltip corrigido */
+.btn-with-tooltip { 
+    position: relative; 
 }
 
-.contact-links {
-    display: flex;
-    gap: 1px; /* Espaçamento uniforme entre os ícones */
-    font-size: 1.8rem; /* Aumenta o tamanho dos ícones */
-    margin-top: 20px;
-}
-
-.contact-links a {
-    color: #fff;
-    text-decoration: none;
-    transition: transform 0.2s, color 0.3s;
-}
-
-.contact-links a:hover {
-    color: #1DB954; /* Verde Spotify ao passar o mouse */
-    transform: scale(1.1); /* Leve aumento no hover */
-}
-
-#about h3 {
-    font-weight: normal;
-}
-
-/* --- EFEITO SPOTIFY COM TOOLTIP --- */
-
-/* 1. Efeito visual do botão ao passar o mouse (Escala e Opacidade) */
-.btn.btn-with-tooltip {
-    transition: transform 0.1s ease, opacity 0.2s ease, background-color 0.2s ease;
-    position: relative; /* Necessário para posicionar o tooltip */
-}
-
-.btn.btn-with-tooltip:hover {
-    transform: scale(1.04); /* Leve aumento */
-    opacity: 0.9;          /* Leve transparência */
-    /* Mantemos o fundo verde, mas a opacidade cria o efeito visual */
-}
-
-/* 2. Criando o Tooltip (o retângulo preto com texto) */
-/* Usamos o pseudoelemento ::after para o Tooltip */
-.btn.btn-with-tooltip::after {
-    content: attr(data-tooltip); /* Texto que você quer mostrar */
+.btn-with-tooltip::after {
+    content: attr(data-tooltip);
     position: absolute;
-    bottom: 125%; /* Posiciona acima do botão */
+    bottom: 125%; 
     left: 50%;
-    transform: translateX(-50%) translateY(10px); /* Centraliza e adiciona um leve deslocamento */
+    transform: translateX(-50%) translateY(10px);
     
-    /* Estilo visual do tooltip (preto arredondado) */
-    background-color: #282828; /* Cinza escuro do Spotify */
-    color: #ffffff;
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    white-space: nowrap; /* Impede que o texto quebre */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Sombra suave */
+    /* Cores e Transparência */
+    background-color: rgba(40, 40, 40, 0.9); /* Meio transparente */
+    color: #fff;
     
-    /* Estado inicial: Escondido e transparente */
+    /* Espaçamento e Forma */
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    
+    /* O SEGREDO PARA NÃO QUEBRAR LINHA: */
+    white-space: nowrap;
+    width: max-content;
+    
+    /* Animação */
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    pointer-events: none; /* Impede que o mouse interaja com o tooltip */
+    transition: opacity 0.2s, transform 0.2s;
     z-index: 10;
+    pointer-events: none; /* Evita que o tooltip atrapalhe o clique */
 }
 
-/* 3. Mostrando o Tooltip no Hover do botão */
-.btn.btn-with-tooltip:hover::after {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(0); /* Move para a posição final */
+.btn-with-tooltip:hover::after { 
+    opacity: 1; 
+    visibility: visible; 
+    transform: translateX(-50%) translateY(0); 
 }

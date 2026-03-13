@@ -1,32 +1,37 @@
-/**
- * Função para alternar entre as abas do perfil.
- * @param {Event} evt - O evento de clique.
- * @param {string} tabName - O ID da seção que deve ser exibida.
- */
+// Gerenciamento de Abas
 function openTab(evt, tabName) {
-    // 1. Seleciona todos os conteúdos e esconde
     const tabContents = document.querySelectorAll(".tab-content");
-    tabContents.forEach(content => {
-        content.classList.remove("active");
-    });
+    tabContents.forEach(content => content.classList.remove("active"));
 
-    // 2. Seleciona todos os itens de menu e remove o estado ativo (linha verde)
     const tabItems = document.querySelectorAll(".tab-item");
-    tabItems.forEach(item => {
-        item.classList.remove("active");
-    });
+    tabItems.forEach(item => item.classList.remove("active"));
 
-    // 3. Mostra a seção clicada
     document.getElementById(tabName).classList.add("active");
-
-    // 4. Adiciona a classe active ao item de menu clicado
     evt.currentTarget.classList.add("active");
     
-    // Opcional: Rola suavemente para o início do conteúdo se estiver no mobile
     if (window.innerWidth < 768) {
         window.scrollTo({
             top: document.querySelector('.spotify-nav').offsetTop,
             behavior: 'smooth'
         });
+    }
+}
+
+// Função See More / See Less
+function toggleReadMore() {
+    const dots = document.getElementById("dots");
+    const moreText = document.getElementById("more-text");
+    const btnText = document.getElementById("readMoreBtn");
+
+    if (dots.style.display === "none") {
+        // Estado: Aberto -> Vai fechar
+        dots.style.display = "inline";
+        btnText.innerHTML = "see more";
+        moreText.style.display = "none";
+    } else {
+        // Estado: Fechado -> Vai abrir
+        dots.style.display = "none";
+        btnText.innerHTML = "see less";
+        moreText.style.display = "inline";
     }
 }
