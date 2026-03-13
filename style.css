@@ -253,3 +253,32 @@ footer { text-align: center; padding: 60px; color: #b3b3b3; }
         display: none;
     }
 }
+
+/* --- TECNOLOGIAS DO PROJETO --- */
+.project-techs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px; /* Espaço após o texto */
+    margin-bottom: 5px; /* Espaço antes dos botões */
+}
+
+.tech-tag {
+    background-color: #3e3e3e; /* Cinza escuro discreto */
+    color: #b3b3b3;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.tech-tag:hover {
+    background-color: #1DB954; /* Verde Spotify no hover */
+    color: #000;
+}
+
+/* Ajuste nos botões para não ficarem colados nas tags */
+.project-card .links {
+    margin-top: 10px;
+}
