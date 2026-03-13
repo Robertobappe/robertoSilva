@@ -158,9 +158,8 @@ h2 { margin-bottom: 25px; color: #1DB954; font-size: 1.5rem; }
 .btn:hover { transform: scale(1.04); }
 .btn-outline { background: transparent; border: 1px solid #fff; color: #fff; margin-left: 10px; }
 
-/* --- ESTILO "SHOW ALL" (SEE MORE) --- */
-#more-text { display: none; } /* Escondido por padrão */
-
+/* --- SEE MORE --- */
+#more-text { display: none; }
 #readMoreBtn {
     color: #b3b3b3;
     text-decoration: none;
@@ -170,11 +169,7 @@ h2 { margin-bottom: 25px; color: #1DB954; font-size: 1.5rem; }
     cursor: pointer;
     transition: color 0.2s ease;
 }
-
-#readMoreBtn:hover {
-    color: #ffffff;
-    text-decoration: underline;
-}
+#readMoreBtn:hover { color: #ffffff; text-decoration: underline; }
 
 /* --- CONTATO --- */
 .contact-links { display: flex; gap: 25px; font-size: 1.8rem; margin-top: 20px; }
@@ -183,7 +178,7 @@ h2 { margin-bottom: 25px; color: #1DB954; font-size: 1.5rem; }
 
 footer { text-align: center; padding: 60px; color: #b3b3b3; }
 
-/* Tooltip corrigido */
+/* --- TOOLTIP (CORRIGIDO) --- */
 .btn-with-tooltip { 
     position: relative; 
 }
@@ -191,34 +186,70 @@ footer { text-align: center; padding: 60px; color: #b3b3b3; }
 .btn-with-tooltip::after {
     content: attr(data-tooltip);
     position: absolute;
-    bottom: 125%; 
+    bottom: 130%; 
     left: 50%;
     transform: translateX(-50%) translateY(10px);
-    
-    /* Cores e Transparência */
-    background-color: rgba(40, 40, 40, 0.9); /* Meio transparente */
+    background-color: rgba(40, 40, 40, 0.95);
     color: #fff;
-    
-    /* Espaçamento e Forma */
     padding: 8px 14px;
     border-radius: 6px;
     font-size: 0.85rem;
     box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-    
-    /* O SEGREDO PARA NÃO QUEBRAR LINHA: */
-    white-space: nowrap;
-    width: max-content;
-    
-    /* Animação */
+    white-space: nowrap; /* Garante uma linha só */
+    width: max-content;   /* Ajusta ao texto */
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.2s, transform 0.2s;
     z-index: 10;
-    pointer-events: none; /* Evita que o tooltip atrapalhe o clique */
+    pointer-events: none;
 }
 
 .btn-with-tooltip:hover::after { 
     opacity: 1; 
     visibility: visible; 
     transform: translateX(-50%) translateY(0); 
+}
+
+/* --- RESPONSIVIDADE (MOBILE) --- */
+@media (max-width: 768px) {
+    .spotify-hero {
+        min-height: 550px; /* Aumentado para caber o conteúdo empilhado */
+    }
+
+    .hero-content {
+        flex-direction: column; /* Empilha foto e nome */
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .spotify-card {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .main-text h1 {
+        font-size: 3.5rem; /* Ajuste para o nome não sumir */
+        line-height: 1;
+    }
+
+    .nav-tabs {
+        gap: 20px;
+        overflow-x: auto; /* Permite deslizar o menu se necessário */
+        padding-bottom: 10px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .btn-outline {
+        margin-left: 0;
+        margin-top: 10px; /* Botões um embaixo do outro no mobile se necessário */
+    }
+    
+    /* Desativar tooltips no mobile (já que não tem 'hover' com mouse) */
+    .btn-with-tooltip::after {
+        display: none;
+    }
 }
