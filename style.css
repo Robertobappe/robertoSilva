@@ -167,7 +167,7 @@ body {
 /* --- ESTILIZAÇÃO INTERNA --- */
 h2 { margin-bottom: 25px; color: #1DB954; font-size: 1.5rem; }
 .project-card { background: #282828; padding: 25px; border-radius: 8px; transition: 0.3s; }
-.project-card:hover { background: #3e3e3e; }
+
 
 .btn {
     display: inline-block;
@@ -216,4 +216,52 @@ footer { text-align: center; padding: 60px; color: #b3b3b3; }
 
 #about h3 {
     font-weight: normal;
+}
+
+/* --- EFEITO SPOTIFY COM TOOLTIP --- */
+
+/* 1. Efeito visual do botão ao passar o mouse (Escala e Opacidade) */
+.btn.btn-with-tooltip {
+    transition: transform 0.1s ease, opacity 0.2s ease, background-color 0.2s ease;
+    position: relative; /* Necessário para posicionar o tooltip */
+}
+
+.btn.btn-with-tooltip:hover {
+    transform: scale(1.04); /* Leve aumento */
+    opacity: 0.9;          /* Leve transparência */
+    /* Mantemos o fundo verde, mas a opacidade cria o efeito visual */
+}
+
+/* 2. Criando o Tooltip (o retângulo preto com texto) */
+/* Usamos o pseudoelemento ::after para o Tooltip */
+.btn.btn-with-tooltip::after {
+    content: attr(data-tooltip); /* Texto que você quer mostrar */
+    position: absolute;
+    bottom: 125%; /* Posiciona acima do botão */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px); /* Centraliza e adiciona um leve deslocamento */
+    
+    /* Estilo visual do tooltip (preto arredondado) */
+    background-color: #282828; /* Cinza escuro do Spotify */
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    white-space: nowrap; /* Impede que o texto quebre */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Sombra suave */
+    
+    /* Estado inicial: Escondido e transparente */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    pointer-events: none; /* Impede que o mouse interaja com o tooltip */
+    z-index: 10;
+}
+
+/* 3. Mostrando o Tooltip no Hover do botão */
+.btn.btn-with-tooltip:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0); /* Move para a posição final */
 }
