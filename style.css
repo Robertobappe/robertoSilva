@@ -103,8 +103,8 @@ body {
 
 .main-text .stats { 
     font-weight: bold; 
-    margin-top: 13px;      /* Diminuí de 12px para 8px para aproximar do nome */
-    font-size: 0.9rem;    /* Diminui um pouco o tamanho da fonte */
+    margin-top: 13px;      
+    font-size: 0.9rem;   
 }
 
 /* --- NOVA NAVEGAÇÃO (TABS) --- */
