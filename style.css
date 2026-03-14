@@ -142,7 +142,13 @@ body {
 
 /* --- PROJETOS E BOTÕES --- */
 h2 { margin-bottom: 25px; color: #1DB954; font-size: 1.5rem; }
-.project-card { background: #282828; padding: 25px; border-radius: 8px; }
+.project-card { 
+    background: #282828; 
+    padding: 25px; 
+    border-radius: 8px; 
+    margin-bottom: 20px; /* Adiciona o espaço entre os cartões */
+    transition: background 0.3s ease; /* Opcional: suave transição de cor */
+}
 
 .btn {
     display: inline-block;
@@ -273,10 +279,6 @@ footer { text-align: center; padding: 60px; color: #b3b3b3; }
     transition: background-color 0.3s, color 0.3s;
 }
 
-.tech-tag:hover {
-    background-color: #1DB954; /* Verde Spotify no hover */
-    color: #000;
-}
 
 /* Ajuste nos botões para não ficarem colados nas tags */
 .project-card .links {
