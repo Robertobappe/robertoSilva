@@ -18,20 +18,19 @@ function openTab(evt, tabName) {
 }
 
 // Função See More / See Less
-function toggleReadMore() {
-    const dots = document.getElementById("dots");
-    const moreText = document.getElementById("more-text");
-    const btnText = document.getElementById("readMoreBtn");
+function toggleReadMore(btn) {
+    const parent = btn.parentElement;
+    const dots = parent.querySelector(".dots");
+    const moreText = parent.querySelector(".more-text");
 
-    if (dots.style.display === "none") {
-        // Estado: Aberto -> Vai fechar
+    // Mudamos a lógica: se o texto extra NÃO estiver aparecendo, nós mostramos
+    if (moreText.style.display === "inline") {
         dots.style.display = "inline";
-        btnText.innerHTML = "see more";
+        btn.innerHTML = "see more";
         moreText.style.display = "none";
     } else {
-        // Estado: Fechado -> Vai abrir
         dots.style.display = "none";
-        btnText.innerHTML = "see less";
+        btn.innerHTML = "see less";
         moreText.style.display = "inline";
     }
 }

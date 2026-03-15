@@ -165,8 +165,8 @@ h2 { margin-bottom: 25px; color: #1DB954; font-size: 1.5rem; }
 .btn-outline { background: transparent; border: 1px solid #fff; color: #fff; margin-left: 10px; }
 
 /* --- SEE MORE --- */
-#more-text { display: none; }
-#readMoreBtn {
+.more-text { display: none; }
+.readMoreBtn {
     color: #b3b3b3;
     text-decoration: none;
     font-weight: bold;
