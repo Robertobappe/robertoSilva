@@ -79,37 +79,38 @@
         <section id="projects" class="tab-content">
             <h2>Top Projects</h2>
             <div class="project-card">
-                <h3>EasySurf Anywhere</h3>
+                <h3>StreamStore Kafka</h3>
                 <p>
-                    Connecting the global surf community, one board at a time: Easy Surf Anywhere is a decentralized marketplace platform designed to simplify 
-                    buying and selling surfboards. Our goal is to connect surfers with local sellers, encouraging a circular economy within the sport and providing 
-                    easy access to the perfect gear, no matter where you are.
+                    Real-time order streaming dashboard powered by Apache Kafka: StreamStore Kafka is a full-stack application that generates, 
+                    streams, and visualizes orders in real time. Orders are produced by a simulator, streamed through Kafka, consumed by a FastAPI 
+                    backend, and displayed on a live dashboard with charts and statistics.
                     
                     <span class="dots">...</span>
                     <span class="more-text">
                         <br><br>
                         <strong>Key Features</strong><br>
-                        • <strong>Smart Geolocation:</strong> Find available surfboards as close to you as possible.<br>
-                        • <strong>Streamlined Marketplace:</strong> Sellers can list their boards (new or used) in just a few clicks.<br>
-                        • <strong>Custom Filters:</strong> Search by board type (longboard, fish, shortboard), volume, material, and condition.<br>
-                        • <strong>Global Reach, Local Connection:</strong> A worldwide showcase that prioritizes logistics and proximity.
+                        • <strong>Live Order Feed:</strong> Orders appear instantly as they are produced via WebSocket push.<br>
+                        • <strong>Orders Timeline:</strong> Line chart showing order volume over time.<br>
+                        • <strong>Top Products:</strong> Doughnut chart of most ordered products.<br>
+                        • <strong>Revenue by Product:</strong> Horizontal bar chart of revenue per product.
                         <br><br>
-                        <strong>Why Use Easy Surf Anywhere?</strong><br>
-                        Shipping a surfboard is often expensive and risky. By connecting buyers with local sellers, we reduce costs, prevent shipping damage, and strengthen the local surfing community.
+                        <strong>Architecture</strong><br>
+                        The system follows a modern event-driven architecture: a Python simulator produces random orders, Apache Kafka (KRaft mode, no ZooKeeper) handles event streaming, FastAPI consumes and pushes data via WebSockets, and a Chart.js dashboard renders everything in real time.
                     </span>
                     <a href="javascript:void(0)" onclick="toggleReadMore(this)" class="readMoreBtn">see more</a>
                 </p>
 
                 <div class="project-techs">
-                    <span class="tech-tag">React</span>
-                    <span class="tech-tag">Node.js</span>
-                    <span class="tech-tag">MongoDB</span>
-                    <span class="tech-tag">Google Maps API</span>
+                    <span class="tech-tag">Apache Kafka</span>
+                    <span class="tech-tag">FastAPI</span>
+                    <span class="tech-tag">WebSockets</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Chart.js</span>
+                    <span class="tech-tag">Docker</span>
                 </div>
 
                 <div class="links">
-                    <a href="https://github.com/Robertobappe/easySurfAnywhere" class="btn btn-with-tooltip" data-tooltip="View Code">GitHub</a>
-                    <a href="https://robertobappe.github.io/easySurfAnywhere/" class="btn btn-outline btn-with-tooltip" data-tooltip="Open Project">Demo</a>
+                    <a href="https://github.com/Robertobappe/StreamStore_Kafka-" class="btn btn-with-tooltip" data-tooltip="View Code">GitHub</a>
                     <a class="btn btn-outline btn-with-tooltip" data-tooltip="In progess">Status</a>
                 </div>
             </div>
